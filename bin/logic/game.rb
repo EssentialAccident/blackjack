@@ -1,11 +1,21 @@
 # This class runs the game
 class Game
   def initialize
-    @num_players = num_players
-    @player = Player.new
-    @dealer = AiDealer.new
+    @player = HumanPlayer.new('Player')
+    @dealer = AiDealer.new('Dealer')
     @deck = Deck.new
     @deck.shuffle
-    # Testing quickly #
+  end
+
+  def setup
+    # Each player gets two cards
+    2.times do
+      @player.get_card(@deck.draw)
+      @dealer.get_card(@deck.draw)
+    end
+    # Show Both Hands
+    puts
+    @player.show_hand
+    @player.show_score
   end
 end

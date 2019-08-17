@@ -19,6 +19,7 @@ class BlackJack
 
   def run
     # @window.show
+    @game.setup
   end
 end
 
