@@ -10,4 +10,15 @@ class GameWindow < Gosu::Window
   def update; end
 
   def draw; end
+
+  def button_down(id)
+    case id
+    when Gosu::KB_Escape
+      close
+    end
+  end
+
+  def needs_cursor?
+    true
+  end
 end
