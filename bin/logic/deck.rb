@@ -37,9 +37,19 @@ class Deck
     end
   end
 
+  def empty?
+    cards_left <= 0
+  end
+
   # It returns the top card from the deck
   # This card will not longer be on the deck
   def draw
+    # Before drawing a card we need to check if the deck is empty
+    # If the deck is empty it will be replenish by the same ammount
+    if empty?
+      @deck = create_deck @number_of_decks
+      shuffle
+    end
     card = @deck[0]
     @deck.delete(card)
     card

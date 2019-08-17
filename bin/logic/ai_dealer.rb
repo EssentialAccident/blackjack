@@ -3,4 +3,8 @@ class AiDealer < Player
   # def initialize(name)
   #   super name
   # end
+
+  def setup
+    @hand.last.face_down
+  end
 end

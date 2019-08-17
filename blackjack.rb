@@ -1,5 +1,6 @@
 # gems
 require 'gosu'
+require 'colorize'
 
 # Local dependencies
 require_relative 'bin/graphics/game_window'
@@ -20,6 +21,7 @@ class BlackJack
   def run
     # @window.show
     @game.setup
+    @game.play
   end
 end
 

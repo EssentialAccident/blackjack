@@ -12,13 +12,15 @@ class Player
   end
 
   def show_hand
-    puts "#{@name}'s Hand"
+    puts "#{@name}'s Hand".colorize(:green)
     @hand.each do |card|
       puts card.to_s
     end
   end
 
-  def show_score; end
+  def clear_hand
+    @hand.clear
+  end
 
   def score
     has_ace = false

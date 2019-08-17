@@ -28,7 +28,7 @@ class Card
   end
 
   def to_s
-    if face_up
+    if face_up?
       "#{@value} of #{@suit}"
     else
       'Face Down'
