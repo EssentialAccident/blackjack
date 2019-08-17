@@ -6,6 +6,7 @@ class Game
     @deck = Deck.new
     @deck.shuffle
     @game_over = false
+    @message = ''
   end
 
   def setup
@@ -31,6 +32,8 @@ class Game
       @player.show_hand
       @player.show_score
       space_blank
+      puts @message.colorize(:red) unless @message.empty?
+      @message = ''
       puts '[H]'.colorize(:light_blue) + 'it, ' +
            '[S]'.colorize(:light_blue) + 'tand, ' +
            '[N]'.colorize(:light_blue) + 'ew hand, or ' +
@@ -56,6 +59,8 @@ class Game
       play
     when 'E'
       exit
+    else
+      @message = 'Pick one of the the colorized options'
     end
   end
 end
