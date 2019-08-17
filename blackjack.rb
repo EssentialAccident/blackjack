@@ -10,10 +10,11 @@ require_relative 'bin/logic/deck'
 class BlackJack
   def initialize
     @window = GameWindow.new
+    @deck = Deck.new
   end
 
   def run
-    @window.show
+    # @window.show
   end
 end
 
