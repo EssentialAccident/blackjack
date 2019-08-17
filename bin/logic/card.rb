@@ -31,7 +31,7 @@ class Card
     if face_up
       "#{@value} of #{@suit}"
     else
-      'Down Card'
+      'Face Down'
     end
   end
 end
