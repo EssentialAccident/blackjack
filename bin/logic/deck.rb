@@ -31,7 +31,7 @@ class Deck
   # is picked randomly
   def shuffle
     shuffles = rand(10..20)
-    puts "Deck shuffled #{shuffles} times"
+    # puts "Deck shuffled #{shuffles} times"
     shuffles.times do
       @deck.shuffle!
     end
