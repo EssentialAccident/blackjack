@@ -1,26 +1,29 @@
 # This class runs the game
 class Game
   def initialize
-    @player = HumanPlayer.new('Player')
-    @dealer = AiDealer.new('Dealer')
+    # The players, included the dealer, will reside in this array
+    @players = []
+    @players.append(HumanPlayer.new('Player'))
+    @players.append(AiDealer.new('Dealer'))
     @deck = Deck.new
     @deck.shuffle
     @game_over = false
     @message = ''
+    @turn = 0
   end
 
   def setup
     # Clearing up the screen
     # system 'clear'
-    # Players habds have to be cleared
-    @player.clear_hand
-    @dealer.clear_hand
+    # Players hands have to be cleared
+    @players.each(&:clear_hand)
     # Each player gets two cards
     2.times do
-      @player.get_card(@deck.draw)
-      @dealer.get_card(@deck.draw)
+      @players.each(&:get_card)
     end
-    @dealer.setup
+    @players.each do |player|
+      player.setup if player.class = 'AiDealer'
+    end
     @game_over = false
   end
 
